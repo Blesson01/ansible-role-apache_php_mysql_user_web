@@ -1,6 +1,6 @@
 galaxy_info:
   author: Blesson Thankachan 
-  description: Installing php7.3
+  description: Installing php7.3,mariadb,apache2
   company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
