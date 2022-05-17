@@ -1,0 +1,23 @@
+---
+  - name: Install mysql
+    apt:
+     name: "{{ item }}"
+     state: present
+     update_cache: yes
+    loop:
+      - mariadb-server
+      - mariadb-client
+#      - python-pymysql
+      - python3-pymysql
+#      - python-apt
+      - python3-apt
+
+
+  - name: create New Mysql user without passwd
+    mysql_user:
+        name: "{{ mysql_user }}"
+        password: "{{ mysql_password }}"
+        host: "%"
+        priv: "*.*:ALL"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+        state: present

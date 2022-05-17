@@ -1,0 +1,14 @@
+---
+  - name: Install php7.3 repo
+    apt_repository:
+      repo: 'ppa:ondrej/php'
+      state: present
+      update_cache: yes
+
+  - name: Install php7.3
+    apt:
+     name: "{{ item }}"
+     state: present
+    loop:
+     - "{{ php_modules }}"
+

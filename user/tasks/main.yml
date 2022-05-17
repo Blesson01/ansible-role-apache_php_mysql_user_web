@@ -1,0 +1,9 @@
+---
+- name: create user
+  user: 
+   name: "{{ user_name }}"
+   state: present
+- name: copy .my.cnf
+  copy:
+   src: .my.cnf 
+   dest: "/home/{{ user_name }}/.my.cnf"
